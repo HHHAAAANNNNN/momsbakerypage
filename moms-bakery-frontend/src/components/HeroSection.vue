@@ -69,6 +69,24 @@
   pointer-events: none;
 }
 
+/* Bottom gradient untuk transisi ke product section */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 248, 240, 0.5) 50%,
+    #FFF8F0 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
 /* Glow yang lebih terlihat */
 .hero::before {
   content: '';
