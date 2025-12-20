@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section id="hero" class="hero">
     <!-- Video Background -->
     <video autoplay muted loop playsinline class="hero-video">
       <source src="/src/assets/breads/breadv3.mp4" type="video/mp4">

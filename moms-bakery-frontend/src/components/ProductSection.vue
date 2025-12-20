@@ -37,11 +37,10 @@
       </div>
       
       <div class="product-info">
-        <h2 class="section-heading">Roti Artisan Segar</h2>
+        <h2 class="section-heading">Roti Segar Hari Ini:
+        <br/>Roti & Bolu Artisan Tangan dengan Bahan Lokal</h2>
         <p class="section-subheading">
-          Dipanggang setiap pagi dengan cinta dan bahan-bahan pilihan terbaik. 
-          Aroma hangatnya menggoda, teksturnya lembut di dalam dan renyah di luar. 
-          Sempurna untuk sarapan keluarga atau teman ngopi sore hari.
+          Dipanggang pagi hari dengan bahan pilihan tanpa pengawet. Tekstur lembut di dalam, renyah di luar — sempurna untuk sarapan keluarga atau acara spesial. Pesan sebelum jam 11 dapat GRATIS ongkir!
         </p>
       </div>
     </div>
@@ -49,11 +48,10 @@
     <!-- Snack Section - Kanan Bawah -->
     <div class="product-row snack-row">
       <div class="product-info">
-        <h2 class="section-heading">Camilan Khas Nusantara</h2>
+        <h2 class="section-heading">Kue Tradisional Nusantara: 
+            <br/>Kue Kering & Kripik Renyah dari Resep Turun Temurun</h2>
         <p class="section-subheading">
-          Kripik renyah dan kue tradisional yang dibuat dari resep turun temurun. 
-          Setiap gigitan membawa nostalgia kampung halaman dengan sentuhan modern. 
-          Cocok untuk oleh-oleh atau menemani waktu santai bersama keluarga.
+          Kue khas Indonesia dengan rasa autentik yang dijaga sejak 1998. Kripik singkong pedas, kue nastar premium, dan kastengel keju — cocok untuk oleh-oleh atau teman ngopi. Stok terbatas setiap hari!
         </p>
       </div>
       
@@ -244,7 +242,7 @@ const slideSnack = (direction) => {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 0.5rem;
   box-sizing: border-box;
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23D4A373' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
@@ -273,10 +271,10 @@ const slideSnack = (direction) => {
 
 .section-heading {
   font-family: 'Playfair Display', serif;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
   color: #3E2723;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   line-height: 1.2;
 }
 

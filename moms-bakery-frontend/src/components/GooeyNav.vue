@@ -1,9 +1,9 @@
 <template>
   <nav class="gooey-nav">
     <div class="nav-container">
-      <div class="logo">Logo</div>
+      <a href="#hero" class="logo" @click.prevent="scrollToSection('hero')">Logo</a>
       <div class="nav-center">
-        <a href="#produk" class="nav-item">Produk</a>
+        <a href="#produk" class="nav-item" @click.prevent="scrollToSection('produk')">Produk</a>
         <a href="#testimoni" class="nav-item">Testimoni</a>
         <a href="#lokasi" class="nav-item">Lokasi</a>
       </div>
@@ -34,6 +34,13 @@
 const handleBurgerClick = () => {
   // Untuk sekarang tidak melakukan apa-apa
 };
+
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
 <style scoped>
@@ -64,6 +71,8 @@ const handleBurgerClick = () => {
   font-weight: 700;
   color: #3E2723;
   flex-shrink: 0;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .nav-center {
