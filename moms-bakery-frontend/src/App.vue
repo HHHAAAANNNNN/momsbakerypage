@@ -1,12 +1,14 @@
 <script setup>
 import GooeyNav from './components/GooeyNav.vue'
 import HeroSection from './components/HeroSection.vue'
+import ProductSection from './components/ProductSection.vue'
 </script>
 
 <template>
   <div class="app">
     <GooeyNav />
     <HeroSection />
+    <ProductSection />
   </div>
 </template>
 

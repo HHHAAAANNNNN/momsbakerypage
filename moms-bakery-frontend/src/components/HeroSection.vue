@@ -1,22 +1,12 @@
 <template>
   <section class="hero">
-    <!-- Particle System - Baru dan Dramatis -->
-    <div class="particle-container">
-      <div 
-        v-for="(particle, i) in particles" 
-        :key="i" 
-        class="particle"
-        :style="{
-          left: particle.left,
-          top: particle.top,
-          width: particle.size,
-          height: particle.size,
-          animationDuration: particle.duration,
-          animationDelay: particle.delay,
-          backgroundColor: particle.color
-        }"
-      ></div>
-    </div>
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="/src/assets/breads/breadv3.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Overlay untuk meningkatkan keterbacaan teks -->
+    <div class="video-overlay"></div>
     
     <div class="hero-content">
       <h1 class="hero-heading">
@@ -33,33 +23,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-
-const particles = ref([])
-
-onMounted(() => {
-  // Generate 15 partikel dengan posisi acak
-  for (let i = 0; i < 15; i++) {
-    particles.value.push({
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      size: `${20 + Math.random() * 30}px`,
-      duration: `${15 + Math.random() * 20}s`,
-      delay: `${Math.random() * 5}s`,
-      color: Math.random() > 0.5 ? '#D4A373' : '#F5DEB3' // Alternate colors
-    })
-  }
-})
 </script>
 
 <style scoped>
 .hero {
-  background: linear-gradient(135deg, 
-    #FFF8F0 0%, 
-    #FDF5E6 40%, 
-    #FAE9D0 70%, 
-    #F5DEB3 100%
-  );
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -67,40 +34,39 @@ onMounted(() => {
   padding: 8rem 2rem 4rem;
   position: relative;
   overflow: hidden;
+  background: #3E2723;
 }
 
-/* Particle System - Dramatis tapi tetap elegan */
-.particle-container {
+/* Video Background */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Overlay untuk meningkatkan keterbacaan */
+.video-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 248, 240, 0.75) 0%,
+    rgba(253, 245, 230, 0.7) 40%,
+    rgba(250, 233, 208, 0.65) 70%,
+    rgba(245, 222, 179, 0.6) 100%
+  );
   z-index: 1;
-}
-
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(15px);
-  opacity: 0.4;
-  animation: float-particle infinite ease-in-out;
-}
-
-@keyframes float-particle {
-  0%, 100% {
-    transform: translateY(0) translateX(0) scale(1);
-  }
-  25% {
-    transform: translateY(-30px) translateX(20px) scale(1.1);
-  }
-  50% {
-    transform: translateY(-15px) translateX(-10px) scale(0.9);
-  }
-  75% {
-    transform: translateY(15px) translateX(15px) scale(1.05);
-  }
+  pointer-events: none;
 }
 
 /* Glow yang lebih terlihat */
@@ -117,7 +83,7 @@ onMounted(() => {
   );
   animation: pulse 8s ease-in-out infinite;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 
 @keyframes pulse {
@@ -129,7 +95,7 @@ onMounted(() => {
   }
 }
 
-/* Hero content - dengan depth */
+/* Hero content */
 .hero-content {
   max-width: 1000px;
   text-align: center;
@@ -144,18 +110,40 @@ onMounted(() => {
   color: #3E2723;
   margin-bottom: 2rem;
   line-height: 1.2;
+  text-shadow: 0 2px 6px rgba(62, 39, 35, 0.15);
 }
 
+/* SUBHEADING - Solusi Readability tanpa Overlay Baru */
 .hero-subheading {
   font-family: 'Quicksand', sans-serif;
   font-size: 24px;
   font-weight: 400;
-  color: #8D6E63;
+  color: #5D4037; /* Lebih gelap dari #8D6E63 */
   margin-bottom: 3rem;
   line-height: 1.4;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  
+  /* Text shadow ganda untuk kontras maksimal */
+  text-shadow: 
+    0 2px 4px rgba(62, 39, 35, 0.25),
+    0 0 8px rgba(255, 255, 255, 0.15);
+  
+  /* Soft background hanya untuk teks */
+  background: rgba(255, 254, 250, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  
+  /* Padding minimal agar tidak terlihat seperti kotak */
+  padding: 8px 20px;
+  border-radius: 12px;
+  
+  /* Border halus untuk memisahkan dari background */
+  border: 1px solid rgba(212, 163, 115, 0.2);
+  
+  /* Shadow halus untuk depth */
+  box-shadow: 0 2px 10px rgba(62, 39, 35, 0.05);
 }
 
 /* CTA Button - lebih dramatis */
@@ -232,16 +220,16 @@ onMounted(() => {
   
   .hero-subheading {
     font-size: 18px;
+    padding: 6px 16px; /* Padding lebih kecil untuk mobile */
+    line-height: 1.5;
+    text-shadow: 
+      0 2px 4px rgba(62, 39, 35, 0.3),
+      0 0 6px rgba(255, 255, 255, 0.2);
   }
   
   .cta-button {
     font-size: 18px;
     padding: 0.875rem 2.5rem;
-  }
-  
-  .particle {
-    opacity: 0.25; /* Lebih transparan di mobile */
-    filter: blur(10px);
   }
   
   .hero::before {
@@ -256,6 +244,7 @@ onMounted(() => {
   
   .hero-subheading {
     font-size: 16px;
+    padding: 5px 12px; /* Padding minimal untuk small screen */
   }
   
   .cta-button {

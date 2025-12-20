@@ -43,7 +43,7 @@ const handleBurgerClick = () => {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  padding: 1.5rem 2rem;
+  padding: 0.875rem 1.75rem;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   filter: url('#gooey');
@@ -91,7 +91,7 @@ const handleBurgerClick = () => {
   font-weight: 600;
   color: #3E2723;
   text-decoration: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 25px;
   transition: all 0.3s ease;
   position: relative;
@@ -135,7 +135,7 @@ const handleBurgerClick = () => {
 .burger-menu span {
   width: 25px;
   height: 3px;
-  background: #3E2723;
+  background: #8D6E63;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
