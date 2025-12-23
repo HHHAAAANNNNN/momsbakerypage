@@ -2,6 +2,9 @@
 import GooeyNav from './components/GooeyNav.vue'
 import HeroSection from './components/HeroSection.vue'
 import ProductSection from './components/ProductSection.vue'
+import TestimoniSection from './components/TestimoniSection.vue'
+import LokasiSection from './components/LokasiSection.vue'
+import FooterSection from './components/FooterSection.vue'
 </script>
 
 <template>
@@ -9,6 +12,9 @@ import ProductSection from './components/ProductSection.vue'
     <GooeyNav />
     <HeroSection />
     <ProductSection />
+    <TestimoniSection />
+    <LokasiSection />
+    <FooterSection />
   </div>
 </template>
 

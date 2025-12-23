@@ -4,8 +4,8 @@
       <a href="#hero" class="logo" @click.prevent="scrollToSection('hero')">Logo</a>
       <div class="nav-center">
         <a href="#produk" class="nav-item" @click.prevent="scrollToSection('produk')">Produk</a>
-        <a href="#testimoni" class="nav-item">Testimoni</a>
-        <a href="#lokasi" class="nav-item">Lokasi</a>
+        <a href="#testimoni" class="nav-item" @click.prevent="scrollToSection('testimoni')">Testimoni</a>
+        <a href="#lokasi" class="nav-item" @click.prevent="scrollToSection('lokasi')">Lokasi</a>
       </div>
       <button class="burger-menu" @click="handleBurgerClick">
         <span></span>
