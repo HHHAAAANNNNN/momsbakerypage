@@ -1,204 +1,267 @@
-# MomsBakeryPage — Landing Page (Iterasi 1)
+# 🥖 Mom's Bakery - Landing Page
 
-Selamat datang di repositori MomsBakeryPage. Ini adalah iterasi pertama sebuah landing page yang dibuat untuk membantu BOLU BOLING PROBOLINGGO memperkenalkan dan memasarkan produk bolu secara online. Tujuan utama proyek ini adalah memberikan kehadiran digital dasar yang responsif, SEO-friendly, dan mudah diupdate secara manual sehingga toko dapat menjangkau pelanggan baru dan meningkatkan penjualan yang saat ini berjalan lambat.
+[![Deploy to GitHub Pages](https://github.com/HHHAAAANNNNN/momsbakerypage/actions/workflows/deploy.yml/badge.svg)](https://github.com/HHHAAAANNNNN/momsbakerypage/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> Catatan penting: Semua aset (gambar), harga, rating, dan deskripsi masih bersifat dummy. Data akan diperbarui setelah diskusi dan konfirmasi dengan manajer toko BOLU BOLING PROBOLINGGO.
+A modern, responsive landing page for Mom's Bakery (Aroma Wangi Brownies Tape) - showcasing artisan bread, pastries, and local specialty products. Built with Vue 3 and Vite for optimal performance and user experience.
+
+## 🌟 Features
+
+- **Responsive Design**: Fully responsive layout optimized for desktop, tablet, and mobile devices
+- **Modern UI/UX**: Clean, intuitive interface with smooth animations and transitions
+- **Product Showcase**: Interactive product sliders featuring bread, pastries, and specialty items
+- **Location Integration**: Embedded map for easy store location finding
+- **Customer Testimonials**: Dedicated section for customer reviews and feedback
+- **SEO Optimized**: Structured with proper meta tags and semantic HTML for better search engine visibility
+- **Fast Performance**: Built with Vite for lightning-fast development and optimized production builds
+- **Automatic Deployment**: CI/CD pipeline with GitHub Actions for seamless updates
+
+## 🚀 Live Demo
+
+Visit the live site: [Mom's Bakery Landing Page](https://hhhaaaannnnn.github.io/momsbakerypage/)
+
+## 🛠️ Technology Stack
+
+- **Framework**: [Vue 3](https://vuejs.org/) - Progressive JavaScript framework
+- **Build Tool**: [Vite](https://vitejs.dev/) - Next generation frontend tooling
+- **State Management**: [Pinia](https://pinia.vuejs.org/) - The Vue Store
+- **Routing**: [Vue Router](https://router.vuejs.org/) - Official router for Vue.js
+- **Styling**: CSS3 with custom design system
+- **Icons**: [Lucide React](https://lucide.dev/) - Beautiful & consistent icons
+- **Utilities**: 
+  - `class-variance-authority` - For component variants
+  - `clsx` & `tailwind-merge` - For className management
+- **Code Quality**:
+  - ESLint - JavaScript linting
+  - Prettier - Code formatting
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+- **Node.js**: `^20.19.0` or `>=22.12.0` (LTS recommended)
+- **npm**: Comes with Node.js (or use yarn/pnpm as alternative)
+
+## 🏁 Getting Started
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/HHHAAAANNNNN/momsbakerypage.git
+   cd momsbakerypage
+   ```
+
+2. **Navigate to the frontend directory**
+   ```bash
+   cd moms-bakery-frontend
+   ```
+
+3. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+### Development
+
+Start the development server with hot-reload:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173` (or the next available port).
+
+### Building for Production
+
+Create an optimized production build:
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory.
+
+### Preview Production Build
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+### Code Quality
+
+Lint and fix code issues:
+
+```bash
+npm run lint
+```
+
+Format code with Prettier:
+
+```bash
+npm run format
+```
+
+## 📁 Project Structure
+
+```
+momsbakerypage/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # GitHub Actions deployment workflow
+├── moms-bakery-frontend/       # Main Vue application
+│   ├── public/                 # Static assets
+│   ├── src/
+│   │   ├── assets/            # Images, fonts, and other assets
+│   │   ├── components/        # Vue components
+│   │   │   ├── GooeyNav.vue       # Navigation component
+│   │   │   ├── HeroSection.vue    # Hero/banner section
+│   │   │   ├── ProductSection.vue # Product showcase
+│   │   │   ├── TestimoniSection.vue # Customer testimonials
+│   │   │   ├── LokasiSection.vue  # Location/contact info
+│   │   │   └── FooterSection.vue  # Footer
+│   │   ├── router/            # Vue Router configuration
+│   │   ├── stores/            # Pinia state management
+│   │   ├── App.vue            # Root component
+│   │   └── main.js            # Application entry point
+│   ├── index.html             # HTML template
+│   ├── vite.config.js         # Vite configuration
+│   └── package.json           # Dependencies and scripts
+└── README.md                  # This file
+```
+
+## 🔧 Configuration
+
+### Base Path for GitHub Pages
+
+The application is configured to work with GitHub Pages. The base path is set in `vite.config.js`:
+
+```javascript
+export default defineConfig({
+  base: '/momsbakerypage/',
+  // ... other config
+})
+```
+
+If deploying to a different platform, adjust the `base` path accordingly.
+
+### Router Configuration
+
+The application uses hash mode for GitHub Pages compatibility. This is configured in the router setup.
+
+## 🚢 Deployment
+
+### Automatic Deployment (GitHub Pages)
+
+This project is configured with GitHub Actions for automatic deployment:
+
+1. Push changes to the `main` branch
+2. GitHub Actions automatically builds and deploys the site
+3. Site is available at: `https://hhhaaaannnnn.github.io/momsbakerypage/`
+
+The workflow file is located at `.github/workflows/deploy.yml`.
+
+### Manual Deployment
+
+#### Deploy to GitHub Pages Manually
+
+```bash
+cd moms-bakery-frontend
+npm run build
+# Deploy the dist/ folder to GitHub Pages branch
+```
+
+#### Deploy to Other Platforms
+
+- **Netlify**: Connect your repository and set build command to `npm run build` (in moms-bakery-frontend directory)
+- **Vercel**: Import the project and configure the root directory to `moms-bakery-frontend`
+- **Traditional Hosting**: Upload the contents of the `dist/` folder to your web server
+
+## 🎨 Customization
+
+### Updating Content
+
+The application uses component-based architecture. To update content:
+
+1. **Products**: Edit `ProductSection.vue` component
+2. **Testimonials**: Edit `TestimoniSection.vue` component
+3. **Location**: Edit `LokasiSection.vue` component
+4. **Contact Info**: Edit `FooterSection.vue` component
+
+### Styling
+
+The project uses a custom color scheme with a warm, bakery-themed palette:
+- Primary background: `#FFF8F0` (Warm cream)
+- Custom animations and transitions throughout
+
+Global styles are defined in `App.vue` and individual component styles.
+
+### Adding New Sections
+
+1. Create a new Vue component in `src/components/`
+2. Import and use it in `App.vue`
+3. Follow the existing component structure for consistency
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Fork the repository**
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. **Make your changes**
+4. **Commit your changes**
+   ```bash
+   git commit -m 'Add some amazing feature'
+   ```
+5. **Push to the branch**
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+6. **Open a Pull Request**
+
+### Development Guidelines
+
+- Follow the existing code style and conventions
+- Run `npm run lint` before committing
+- Test your changes on multiple screen sizes
+- Update documentation if needed
+- Write clear commit messages
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Authors
+
+- **HHHAAAANNNNN** - *Initial work* - [GitHub Profile](https://github.com/HHHAAAANNNNN)
+
+## 🙏 Acknowledgments
+
+- Built with [Vue 3](https://vuejs.org/) and [Vite](https://vitejs.dev/)
+- Icons from [Lucide](https://lucide.dev/)
+- Fonts from [Google Fonts](https://fonts.google.com/) (Playfair Display & Quicksand)
+
+## 📞 Support
+
+For support, questions, or feedback:
+- Open an issue on [GitHub Issues](https://github.com/HHHAAAANNNNN/momsbakerypage/issues)
+- Contact the repository owner
+
+## 🗺️ Roadmap
+
+Future enhancements planned:
+- [ ] Online ordering system integration
+- [ ] Admin panel for content management
+- [ ] Multi-language support (Indonesian/English)
+- [ ] Blog section for recipes and bakery news
+- [ ] Customer account system
+- [ ] Real-time inventory updates
+- [ ] Payment gateway integration
 
 ---
 
-## Ringkasan tujuan
-- Membuat landing page sederhana namun modern untuk BOLU BOLING PROBOLINGGO.
-- Mempermudah pemasaran online dan perolehan pelanggan baru lewat website.
-- Menyediakan struktur dasar SEO (meta tags, OG tags, JSON-LD) agar mudah dioptimasi lebih lanjut.
-- Menyimpan konten sementara (dummy) agar tim dapat meninjau desain & alur sebelum memasukkan data final.
-
----
-
-## Fitur (Iterasi 1)
-- Halaman landing responsif (desktop & mobile).
-- Seksi produk/varian dengan gambar, harga, rating (dummy).
-- Seksi "Tentang Kami", "Kontak", dan "Lokasi" (dummy).
-- Pengaturan meta dasar untuk SEO dan preview media sosial (Open Graph / Twitter Card).
-- Struktur mudah diupdate secara manual (assets, teks, harga).
-- Build scripts standar (lihat bagian Instalasi & Pengembangan).
-
----
-
-## Teknologi
-- Vue (utama) — frontend SPA atau SSG (tergantung konfigurasi repo).
-- JavaScript
-- HTML / CSS
-
-> Komposisi bahasa repo: Vue ~90.7%, JavaScript ~6.6%, HTML ~2.7%
-
----
-
-## Persyaratan
-- Node.js (direkomendasikan LTS terbaru)
-- npm atau yarn
-- (Opsional) akun hosting untuk deployment: GitHub Pages / Netlify / Vercel / hosting lainnya
-
----
-
-## Cara menjalankan (lokal)
-1. Clone repo:
-   - git clone https://github.com/HHHAAAANNNNN/MomsBakeryPage.git
-2. Masuk ke folder repo:
-   - cd MomsBakeryPage
-3. Install dependency:
-   - npm install
-   - atau: yarn
-4. Jalankan development server:
-   - Jika menggunakan Vite: `npm run dev`
-   - Jika menggunakan Vue CLI: `npm run serve`
-   - Periksa `package.json` untuk skrip yang tersedia (contoh: `dev`, `serve`, `build`, `start`).
-
-5. Build untuk produksi:
-   - `npm run build` (atau `yarn build`)
-   - Hasil build biasanya berada di folder `dist/` (atau sesuai konfigurasi).
-
----
-
-## Struktur proyek (umum)
-Catatan: struktur aktual bisa berbeda — periksa repo Anda.
-- public/ — file statis (index.html, favicon, robots.txt)
-- src/
-  - assets/ — gambar & aset statis
-  - components/ — komponen Vue
-  - views/ atau pages/ — halaman / sections
-  - router/ — pengaturan rute (jika SPA)
-  - store/ — state management (Vuex / Pinia), jika ada
-  - data/ atau store/products.* — tempat biasa menyimpan data produk dummy
-- package.json — skrip & dependency
-
----
-
-## Panduan memperbarui konten secara manual
-Berikut langkah umum untuk mengganti data dummy dengan data final nanti:
-
-1. Gambar / Logo
-   - Ganti file di `src/assets/` (atau `public/`) dengan file gambar baru.
-   - Perbarui path di komponen yang menampilkan gambar (contoh: `src/components/ProductCard.vue`).
-
-2. Daftar produk (harga, nama, deskripsi, rating)
-   - Cari file data produk (mis. `src/data/products.js`, `src/store/products.js`, atau langsung di `components`).
-   - Contoh format data JSON sederhana:
-     ```js
-     export default [
-       {
-         id: 1,
-         name: "Bolu Boling Original",
-         price: 25000,
-         rating: 4.5,
-         image: "/assets/bolu-original.jpg",
-         description: "Bolu lembut tradisional khas Probolinggo."
-       },
-       ...
-     ];
-     ```
-   - Update nilai `price`, `rating`, `description` sesuai data dari manajer.
-
-3. Kontak & Lokasi
-   - Update `src/views/About.vue` atau file yang memuat alamat/kontak.
-   - Sertakan link Google Maps (embed) untuk mempermudah pelanggan menemukan toko.
-
-4. Meta tags & SEO
-   - Perbarui `public/index.html` (atau `src/meta.js`) untuk:
-     - title
-     - meta description
-     - open graph tags (`og:title`, `og:description`, `og:image`)
-     - twitter card tags
-   - Tambahkan JSON-LD (structured data) di head untuk LocalBusiness jika perlu:
-     ```html
-     <script type="application/ld+json">
-     {
-       "@context": "https://schema.org",
-       "@type": "Bakery",
-       "name": "BOLU BOLING PROBOLINGGO",
-       "image": "https://example.com/assets/logo.jpg",
-       "address": {
-         "@type": "PostalAddress",
-         "streetAddress": "Jl. Contoh No.1",
-         "addressLocality": "Probolinggo",
-         "addressRegion": "Jawa Timur",
-         "postalCode": "672xx",
-         "addressCountry": "ID"
-       },
-       "telephone": "+62-xxx-xxx-xxxx",
-       "url": "https://your-deployed-site.example.com"
-     }
-     </script>
-     ```
-
-5. Bahasa & Konten
-   - Pastikan semua teks yang muncul di UI diletakkan di satu tempat (mis. file `src/i18n`, `src/data/content.js` atau langsung dalam komponen) supaya mudah diubah.
-
----
-
-## SEO & Marketing — rekomendasi singkat
-Agar website membantu pemasaran online:
-- Perbarui title dan meta description dengan kata kunci relevan (contoh: "Bolu Probolinggo", "Bolu Boling", "Kue Tradisional Probolinggo").
-- Gunakan heading terstruktur (H1 untuk nama toko / tagline, H2 untuk kategori).
-- Optimalkan gambar: kompres, gunakan atribut `alt`, dan set ukuran yang sesuai.
-- Tambahkan Open Graph & Twitter Card untuk tampilan share yang baik di sosial media.
-- Tambahkan sitemap.xml dan robots.txt.
-- Daftarkan usaha ke Google Business Profile (sebagai langkah berikutnya) — sertakan link atau data kontak di website.
-- Pantau performa SEO dasar dengan Google Search Console setelah deploy.
-
----
-
-## Deployment — opsi cepat
-- Netlify: hubungkan repo → automatic deploy pada push branch utama.
-- Vercel: sangat cocok untuk proyek Vue + Vite.
-- GitHub Pages: bisa dengan `gh-pages` jika SPA sederhana.
-- Atau hosting tradisional: upload folder `dist/`.
-
-Setelah deploy, pastikan:
-- URL canonical dikonfigurasi (jika perlu).
-- OG images punya absolute URL (https://domain/...).
-- SSL/HTTPS aktif.
-
----
-
-## Checklist untuk diskusi dengan manajer toko (untuk update konten final)
-1. Logo resolusi tinggi (PNG / SVG)
-2. Foto produk asli (untuk tiap varian) + penamaan file
-3. Daftar produk lengkap: nama, SKU (opsional), harga jual, bahan utama, berat/ukuran
-4. Deskripsi singkat & panjang untuk tiap produk
-5. Jam operasional & hari buka
-6. Kontak: nomor telepon, WhatsApp, e-mail
-7. Alamat lengkap & Google Maps link
-8. Rating / testimonial (jika mau tampilkan)
-9. Metode pemesanan: telepon, WA, order online, antar (delivery)
-10. Kebijakan pengembalian / refund (jika ada)
-
----
-
-## Hal yang masih dummy / catatan
-- Semua data produk (nama, harga, rating, gambar) sifatnya dummy.
-- Jangan gunakan data dummy untuk promosi resmi; update setelah konfirmasi.
-- Pastikan hak cipta dan izin foto sudah jelas sebelum publikasi.
-
----
-
-## Kontribusi
-Jika Anda ingin menambah fitur atau memperbaiki konten:
-1. Buat branch baru dari `main`:
-   - git checkout -b feat/ubah-konten
-2. Commit perubahan
-3. Buat pull request dan deskripsikan perubahan
-Jika Anda bekerja sendiri, Anda bisa langsung commit ke branch utama lalu deploy.
-
----
-
-## Lisensi
-Lisensi default: MIT. (Sesuaikan jika organisasi punya ketentuan lain.)
-
----
-
-## Kontak
-Repositori ini dibuat untuk membantu digitalisasi BOLU BOLING PROBOLINGGO. Untuk update isi konten, silakan kumpulkan data dari manajer toko dan masukkan ke file-file yang disebutkan di atas. Setelah Anda siap, lakukan commit & push sehingga perubahan dapat dideploy.
-
----
-
-Terima kasih — semoga iterasi pertama ini membantu BOLU BOLING PROBOLINGGO untuk mulai menjangkau pelanggan baru melalui dunia digital. Jika Anda mau, saya bisa bantu menyiapkan template email atau daftar pertanyaan untuk wawancara singkat dengan manajer toko yang bisa Anda gunakan untuk mengumpulkan data final.
+Made with ❤️ for Mom's Bakery - Bringing the aroma of fresh brownies to your digital experience!
